@@ -5,7 +5,7 @@
 				<%= image_tag "svg/logo-min-w-line.svg" %>
 			</a>
 			<ul>
-				<li class="active"><a href="#">about</a></li>
+				<li class="active"><a href="/about">about</a></li>
 				<li><a href="#">share</a></li>
 				<li><a href="#">my</a></li>
 			</ul>
@@ -36,7 +36,15 @@
 		</div>
 	</div>
 	<div class="sec03-img" id="sec03-img">
-<!--		7*3개 필요-->
+		<% 40.times do %>
+			<% @type_number = rand(7) + 2 %>
+			<% @index_number = rand(4) + 1 %>
+			<% @image_url = @type_number == 8 ? "q0#{@type_number}" : "q0#{@type_number}-0#{@index_number}" %>
+			<div class="icon-con" style="opacity: 1;">
+				<div class="icon-border"></div>
+				<%= image_tag "svg/#{@image_url}.svg" %>
+			</div>
+		<% end %>
 	</div>
 </section>
 <section class="sec04 sec-padding">
