@@ -1,0 +1,1 @@
+var addTombs = document.getElementById('addTombs');

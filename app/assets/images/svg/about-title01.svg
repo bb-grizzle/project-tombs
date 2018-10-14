@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204 64">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 40px;
+        font-family: NanumSquareB, NanumSquare;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <g id="그룹_1216" data-name="그룹 1216" transform="translate(-117.5 -2110.5)">
+    <text id="TALK" class="cls-1" transform="translate(140 2157)"><tspan x="0" y="0">TALK</tspan></text>
+    <g id="그룹_359" data-name="그룹 359" transform="translate(0 -148)">
+      <rect id="사각형_5" data-name="사각형 5" class="cls-2" width="140" height="60" transform="translate(119.5 2260.5)"/>
+      <rect id="사각형_4" data-name="사각형 4" class="cls-2" width="60" height="60" transform="translate(259.5 2260.5)"/>
+      <line id="선_1" data-name="선 1" class="cls-2" x1="60" y2="60" transform="translate(259.5 2260.5)"/>
+    </g>
+  </g>
+</svg>

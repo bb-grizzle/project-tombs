@@ -1,0 +1,31 @@
+for (var i = 0; i < 40; i++) {
+	var wrap = document.getElementById('sec03-img');
+
+	var icon_con = document.createElement('div');
+	var border = document.createElement('div');
+	var icon = document.createElement('img');
+	
+	icon_con.setAttribute("class", "icon-con");
+	border.setAttribute("class", "icon-border");
+	
+
+	var type = parseInt(Math.random() * 7) + 2;
+	var numb = parseInt(Math.random() * 4) + 1;
+
+	var image = "";
+	if (type == 8) {
+		image = "q0" + type;
+	} else {
+		image = "q0" + type + "-0" + numb;
+	}
+	icon.setAttribute("src", "<%= image_path "asset/svg/.svg" %>");
+	
+	icon_con.appendChild(border);
+	icon_con.appendChild(icon);
+	
+
+	wrap.appendChild(icon_con);
+	console.log('test');
+	
+	icon_con.style.opacity = "1";
+}
