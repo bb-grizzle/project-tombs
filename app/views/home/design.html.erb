@@ -1,0 +1,269 @@
+<section class="design-layout">
+  <%= form_tag("/design", method: "post") do %>
+    <fieldset class="user-info sec01" name="q01">
+			<h4>당신은<br>어떤 사람 인가요?</h4>
+			<div class="question-row q01-01">
+				<p>나의 이름은</p>
+				<input type="text" placeholder="윤태웅" class="tran-02 q01" name="q01-01" data-form-no="0" onchange="input_checker(this)">
+				<p>입니다.</p>
+		  </div>
+			<div class="question-row  q01-02">
+			<p>저는</p>
+				<input type="date" placeholder="Date" class="tran-02 q01" name="q01-02" data-form-no="1" onchange="input_checker(this)">
+				<p>에 태어났어요.</p>
+			</div>
+			<div class="question-row  q01-03">
+				<input type="number" placeholder="378" class="tran-02 q01" name="q01-03" data-form-no="2" onchange="input_checker(this)">
+				<p>살 까지 살고 싶어요.</p>
+			</div>
+			<div class="btn-next" onclick="actionNextButton(`sec02`)">
+			  다음으로
+			</div>
+		</fieldset>
+
+		<fieldset name="q02-q03" class="q00 user-info sec02" style="display:none;">
+			<h4>당신이 죽는날은<br>어땠으면 좋겠나요.</h4>
+			<div class="q-wrap">
+				<div class="radio-wrap" id="q02">
+					<input type="radio" id="q02-01" name="q02" data-form-no="3" class="q02" value="q02-01">
+					<label for="q02-01" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "gif/q02-01.gif" %>" alt="" class="q-icon-gif">
+						<img src="<%= image_path "svg/q02-01.svg" %>" alt="spring" class="q-icon">
+						<h5>화창한 봄</h5>
+					</label>
+					<input type="radio" id="q02-02" name="q02" data-form-no="3" class="q02" value="q02-02">
+					<label for="q02-02" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "gif/q02-02.gif" %>" alt="" class="q-icon-gif">
+						<img src="<%= image_path "svg/q02-02.svg"%>" alt="summer" class="q-icon">
+						<h5>무더운 여름</h5>
+					</label>
+					<input type="radio" id="q02-03" name="q02" data-form-no="3" class="q02" value="q02-03">
+					<label for="q02-03" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q02-03.svg" %>" alt="fall" class="q-icon">
+						<h5>선선한 가을</h5>
+					</label>
+					<input type="radio" id="q02-04" name="q02" data-form-no="3" class="q02" value="q02-04">
+					<label for="q02-04" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q02-04.svg" %>" alt="winter" class="q-icon">
+						<h5>추운 겨울</h5>
+					</label>
+				</div>
+				<p class="q-text">계절에</p>
+			</div>
+			<!--				q03-->
+			<div class="q-wrap">
+				<div class="radio-wrap" id="q03">
+					<input type="radio" id="q03-01" name="q03" data-form-no="4" class="q03" value="q03-01">
+					<label for="q03-01" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q03-01.svg"%>" alt="spring" class="q-icon">
+						<h5>화창하고 밝은</h5>
+					</label>
+					<input type="radio" id="q03-02" name="q03" data-form-no="4" class="q03" value="q03-02">
+					<label for="q03-02" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q03-02.svg" %>" alt="summer" class="q-icon">
+						<h5>구름이 가득한</h5>
+					</label>
+					<input type="radio" id="q03-03" name="q03" data-form-no="4" class="q03" value="q03-03">
+					<label for="q03-03" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q03-03.svg" %>" alt="fall" class="q-icon">
+						<h5>비가 내리는</h5>
+					</label>
+					<input type="radio" id="q03-04" name="q03" data-form-no="4" class="q03" value="q03-04">
+					<label for="q03-04" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q03-04.svg" %>" alt="winter" class="q-icon">
+						<h5>눈이 오는</h5>
+					</label>
+				</div>
+				<p class="q-text">날이면 좋겠어요.</p>
+			</div>
+			<div class="btn-next" onclick="actionNextButton(`sec03`)">
+		    다음으로
+		  </div>
+		</fieldset>
+
+		<fieldset name="q04-q05" class="q00 user-info sec03" style="display:none;">
+			<h4>어디서 무엇을<br>하고 있을 건가요?</h4>
+			<!--			q04-->
+			<div class="q-wrap">
+				<div class="radio-wrap" id="q04">
+					<input type="radio" id="q04-01" data-form-no="5" name="q04" value="q04-01">
+					<label for="q04-01" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q04-01.svg" %>" alt="spring" class="q-icon">
+						<h5>나의 집</h5>
+					</label>
+					<input type="radio" id="q04-02" data-form-no="5" name="q04" value="q04-02">
+					<label for="q04-02" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q04-02.svg" %>" alt="summer" class="q-icon">
+						<h5>병원</h5>
+					</label>
+					<input type="radio" id="q04-03" data-form-no="5" name="q04" value="q04-03">
+					<label for="q04-03" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q04-03.svg" %>" alt="fall" class="q-icon">
+						<h5>근처 공원</h5>
+					</label>
+					<input type="radio" id="q04-04" data-form-no="5" name="q04" value="q04-04">
+					<label for="q04-04" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q04-04.svg" %>" alt="winter" class="q-icon">
+						<h5>바닷가</h5>
+					</label>
+				</div>
+				<p class="q-text">에서</p>
+			</div>
+			<!--				q05-->
+			<div class="q-wrap">
+				<div class="radio-wrap" id="q05">
+					<input type="radio" id="q05-01" data-form-no="6" name="q05" value="q05-01">
+					<label for="q05-01" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q05-01.svg" %>" alt="spring" class="q-icon">
+						<h5>대화</h5>
+					</label>
+					<input type="radio" id="q05-02" data-form-no="6" name="q05" value="q05-02">
+					<label for="q05-02" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q05-02.svg" %>" alt="summer" class="q-icon">
+						<h5>숙면</h5>
+					</label>
+					<input type="radio" id="q05-03" data-form-no="6" name="q05" value="q05-03">
+					<label for="q05-03" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q05-03.svg" %>" alt="fall" class="q-icon">
+						<h5>독서</h5>
+					</label>
+					<input type="radio" id="q05-04" data-form-no="6" name="q05" value="q05-04">
+					<label for="q05-04" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q05-04.svg" %>" alt="winter" class="q-icon">
+						<h5>산책</h5>
+					</label>
+				</div>
+				<p class="q-text">을(를) 할거에요.</p>
+			</div>
+			<div class="btn-next" onclick="actionNextButton(`sec04`)">
+		    다음으로
+			</div>
+    </fieldset>
+    
+    <fieldset name="q06-q07" class="q00 user-info sec04" style="display:none;">
+			<h4>어떤 분위기에<br>누구와 함께하고 싶나요?</h4>
+			<div class="q-wrap">
+				<div class="radio-wrap" id="q06">
+					<input type="radio" id="q06-01" data-form-no="7" name="q06" value="q06-01">
+					<label for="q06-01" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q06-01.svg" %>" alt="spring" class="q-icon">
+						<h5>우울한</h5>
+					</label>
+					<input type="radio" id="q06-02" data-form-no="7" name="q06" value="q06-02">
+					<label for="q06-02" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q06-02.svg" %>" alt="summer" class="q-icon">
+						<h5>차분한</h5>
+					</label>
+					<input type="radio" id="q06-03" data-form-no="7" name="q06" value="q06-03">
+					<label for="q06-03" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q06-03.svg" %>" alt="fall" class="q-icon">
+						<h5>밝은</h5>
+					</label>
+					<input type="radio" id="q06-04" data-form-no="7" name="q06" value="q06-04">
+					<label for="q06-04" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q06-04.svg" %>" alt="winter" class="q-icon">
+						<h5>활발한</h5>
+					</label>
+				</div>
+				<p class="q-text">분위기 속에서</p>
+			</div>
+			<!--				q07-->
+			<div class="q-wrap">
+				<div class="radio-wrap" id="q07">
+					<input type="radio" id="q07-01" data-form-no="8" name="q07" value="q07-01">
+					<label for="q07-01" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q07-01.svg" %>" data-form-no="8" alt="spring" class="q-icon">
+						<h5>혼자</h5>
+					</label>
+					<input type="radio" id="q07-02" data-form-no="8" name="q07" value="q07-02">
+					<label for="q07-02" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q07-02.svg" %>" alt="summer" class="q-icon">
+						<h5>배우자</h5>
+					</label>
+					<input type="radio" id="q07-03" data-form-no="8" name="q07" value="q07-03">
+					<label for="q07-03" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q07-03.svg" %>" alt="fall" class="q-icon">
+						<h5>가족</h5>
+					</label>
+					<input type="radio" id="q07-04" data-form-no="8" name="q07" value="q07-04">
+					<label for="q07-04" class="icon-wrap">
+						<div class="q-icon-bg"></div>
+						<img src="<%= image_path "svg/q07-04.svg" %>" alt="winter" class="q-icon">
+						<h5>가족, 모든 지인</h5>
+					</label>
+				</div>
+				<p class="q-text">과(와) 있고 싶어요.</p>
+			</div>
+			<div class="btn-next" onclick="actionNextButton(`sec05`)">
+		    다음으로
+			</div>
+    </fieldset>
+    <fieldset class="user-info sec05" style="display:none;">
+      <fieldset name="q08" class="q08">
+			<h4>마지막으로<br>남기고 싶은 말은 무엇인가요?</h4>
+			<div class="text-wrap">
+				<textarea placeholder="leave your message..." name="q08" id="q08" onfocusout="q08_focusOut()"></textarea>
+				<label for="q08" class="icon-wrap" id="q08-label">
+					<div class="q-icon-bg" id="q08_icon_bg"></div>
+					<img src="<%= image_path "svg/q08.svg" %>" alt="message" class="q-icon">
+				</label>
+			</div>
+    </fieldset>
+      <fieldset name="q-submit" class="q-submit">
+			<input type="submit" id="q-submit" name="q-submit" onclick="submit">
+			<label for="q-submit" id="btn-wrap">
+				<img src="<%= image_path "svg/btn-enroll.svg" %>" alt="enrollment">
+			</label>
+    </fieldset>
+    </fieldset>
+  <% end %>
+</section>
+
+<script>
+  $( "input[name*='q02']" ).click(function() {
+    input_checker(this);
+  });
+  
+  $( "input[name*='q03']" ).click(function() {
+    input_checker(this);
+  });
+  
+  $( "input[name*='q04']" ).click(function() {
+    input_checker(this);
+  });
+  
+  $( "input[name*='q05']" ).click(function() {
+    input_checker(this);
+  });
+  
+  $( "input[name*='q06']" ).click(function() {
+    input_checker(this);
+  });
+  
+  $( "input[name*='q07']" ).click(function() {
+    input_checker(this);
+  });
+</script>
