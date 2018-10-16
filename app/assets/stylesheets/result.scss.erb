@@ -1,0 +1,692 @@
+.result-main {
+    .tran-01{
+    	transition: all .5s ease-in-out;
+    }
+    .tran-02{
+    	transition: all .3s ease-in-out;
+    }
+    .tran-03{
+    	transition: all 0.5s ease-in-out;
+    }
+    
+    
+    .con{
+    	width: 70%;
+    	margin: auto;
+    }
+    
+    /*header------------------*/
+    header{
+    	height: 80px;
+    	position: fixed;
+    	width: 100%;
+    	top: 0;
+    	z-index: 1;
+    	border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+    header:after{
+    	clear: both;
+    	content: "";
+    	display: block;
+    }
+    header .logo img{
+    	height: 40px;
+    	margin: 20px 0;
+    }
+    header ul{
+    	float: right;
+    }
+    header li{
+    	float: left;
+    	font-size: .8em;
+    	font-weight: lighter;
+    	line-height: 76px;
+    	padding: 0 20px;
+    	margin: 0 10px;
+    	text-transform: capitalize;
+    	box-sizing: border-box;
+    	transition: all .5s ease-in-out;
+    }
+    
+    header li:hover a{
+    	opacity: 1;
+    }
+    
+    header .active{
+    	border-bottom: 4px solid black;
+    }
+    
+    header .active a{
+    	opacity: 1;
+    	font-weight: bold;
+    	color: black;
+    }
+    
+    header li a{
+    	opacity: 0.5;
+    	color: black;
+    	transition: all .5s ease-in-out;
+    }
+    
+    footer{
+    	position: relative;
+    	width: 100%;
+    	bottom: 0;
+    	background-color: black;
+    	color: white;
+    	font-weight: bolder;
+    }
+    
+    .foo{
+    	display: flex;
+    	align-items: center;
+    	height: 240px;
+    }
+    
+    footer img{
+    	width:100px;
+    }
+    
+    footer p{
+    	font-weight: lighter;
+    	font-size: 0.6em;
+    	line-height: 2;
+    	margin-left: 30px;
+    }
+    
+    .headerHeight{
+    	height: 80px;
+    }
+    
+    
+    /*section - profile*/
+    
+    .tombs-profile{
+    	height: calc(100vh - 80px);
+    	height: 100vh;
+    	display: flex;
+    	padding-top: 8%;
+    	position: relative;
+    	display: none;
+    }
+    
+    
+    .profile-wrap{
+    	width: 100%;
+    	position: relative;
+    	display: flex;
+    	justify-content: space-between;
+    /*	border: 1px solid black;*/
+    	align-items: center;
+    	right: -60px;
+    	top: 60px;
+    }
+    
+    .profile-illust{
+    /*	float: right;*/
+    }
+    
+    .profile-illust ul{
+    	width: 440px;
+    /*	border: 1px solid black;*/
+    }
+    
+    .profile-illust ul:after{
+    	content: "";
+    	display: block;
+    	clear: both;
+    }
+    
+    .profile-wrap:after{
+    	content: "";
+    	display: block;
+    	clear: both;
+    }
+    
+    .profile-illust:after{
+    	content: "";
+    	display: block;
+    	clear: both;
+    }
+    
+    .profile-illust li{
+    	width: 140px;
+    	height: 140px;
+    /*	border: 2px solid #8CA2DE;*/
+    	box-sizing: inherit;
+    	float: left;
+    	background-color: transparent;
+    	position: relative;
+    	
+    	margin-right: -8px;
+    	margin-bottom: -8px;
+    	
+    }
+    .illust-text{
+    	font-weight: bolder;
+    	position: absolute;
+    }
+    #birth_y{
+    	right: 20px;
+    	bottom: 60px;
+    	font-weight: 800;
+    }
+    .illust-line{
+    	width: 50px;
+    	height: 10px;
+    	background-color: black;
+    	position: absolute;
+    }
+    #illust-line-birth{
+    	right: 20px;
+    	bottom: 40px;
+    }
+    
+    #illust-line-death{
+    	left: 20px;
+    	top: 40px;
+    }
+    #death_y{
+    	left: 20px;
+    	top: 60px;
+    	font-weight: 800;
+    }
+    
+    
+    .profile-illust li img{
+    	position: absolute;
+    	width: 100%;
+    	height: 100%;
+    	left: 0;
+    	top: 0;
+    }
+    
+    .profile-illust li:after{
+    	content: "";
+    	display: block;
+    	position: absolute;
+    	
+    	width: 100%;
+    	height: 100%;
+    	border: 8px solid black;
+    	box-sizing: border-box;
+    	
+    	left: 0;
+    	top: 0;
+    }
+    
+    #profile-percent{
+    	margin-bottom: 4px;
+    }
+    
+    #profile-percent-line{
+    	width: 100%;
+    	height: 6px;
+    	background-color: #D5D5D5;
+    	margin-bottom: 30px;
+    	position: relative;
+    	border-radius: 3px;
+    /*	mix-blend-mode: color-burn;*/
+    }
+    #profile-percent-line-active{
+    	border-radius: 3px;
+    	display: block;
+    	width: 0%;
+    	height: 6px;
+    	background-color: #8CA2DE;
+    	position: absolute;
+    	top: 0px;
+    	left: 0px;
+    	
+    	transition: all .5s ease-in-out;
+    }
+    
+    #profile-percent{
+    	color: #8CA2DE;
+    }
+    
+    .profile-text{
+    	width: 40%;
+    	position: relative;
+    }
+    
+    .profile-message{
+    	width: 100%;
+    	min-height: 100px;
+    	font-size: 0.7em;
+    	line-height: 1.8;
+    	font-weight: 600;
+    	
+    /*	border: 1px solid black;*/
+    }
+    
+    #profile-name{
+    	color: #8CA2DE;
+    }
+    
+    #profile-keyword{
+    	font-size: .6em;
+    	width: 20vw;
+    	line-height: 2.5;
+    }
+    
+    .profile-container{
+    	height: 100vh;
+    	transform: translateY(80px);
+    /*	border: 1px solid black;*/
+    }
+    
+    #btn-print{
+    	background-color: #8CA2DE;
+    	color: white;
+    	font-size: 0.8em;
+    	display: inline-block;
+    	margin-top: 20px;
+    	height: 40px;
+    	line-height: 40px;
+    	padding: 0 20px;
+    	box-shadow: 1px 1px 3px rgba(0,0,0,0.16);
+    	cursor: pointer;
+    }
+    
+    #btn-print:hover{
+    	box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+    }
+    
+    
+    .btn-down{
+    	position: absolute;
+    	width: 80px;
+    	left: 50%;
+    	transform: translateX(-50%);
+    	bottom: 50px;
+    	cursor: pointer;
+    }
+    
+    
+    
+    /*tombs Profile Detail*/
+    .profile-con{
+    	width: 50%;
+    	margin: 0 auto;
+    	position: relative;
+    /*	top: 50px;*/
+    	margin-top: 196px;
+    }
+    
+    
+    .profile-bg{
+    	width: 100%;
+    	height: 500px;
+    	background-color: #8CA2DE;
+    	position: fixed;
+    	bottom: 0;
+    	height: 75%;
+    }
+    
+    .profile-header{
+    	width: 480px;
+    	height: 80px;
+    	margin: 60px auto;
+    	position: relative;
+    	background-color: white;
+    	border: 4px solid #8CA2DE;
+    	box-sizing: content-box
+    }
+    
+    .profile-header ul{
+    	height: 80px;
+    	float: left;
+    	width: 80px;
+    	border-right: 4px solid #8CA2DE;
+    	box-sizing: border-box;
+    }
+    
+    .profile-header li{
+    	height: 40px;
+    	text-align: center;
+    	line-height: 35px;
+    	font-weight: bolder;
+    	color: #8CA2DE
+    }
+    
+    .profile-header li:first-child{
+    	border-bottom: 4px solid #8CA2DE;
+    }
+    
+    .profile-name{
+    	float: left;
+    	margin: 0;
+    	padding: 0;
+    	line-height: 80px;
+    	text-align: center;
+    	width: 390px;
+    	color: #8CA2DE;
+    	font-weight: bolder;
+    }
+    
+    #addTombs{
+    	width: 100%;
+    	height: 80px;
+    	border-top: 1px solid white;
+    	border-bottom: 1px solid white;
+    	position: relative;
+    	overflow: hidden;
+    /*	margin-top: 20px;*/
+    	
+    	opacity: 1;	
+    	
+    /*	clicked*/
+    
+    }
+    
+    #toggle{
+    	display: none;
+    }
+    #toggle:checked + #addTombs{
+    	margin-top: 20px;
+    	height: 500px;
+    	background-color: white;
+    	box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+    }
+    
+    .btn-pluse{
+    	position: absolute;
+    	z-index: 1;
+    	left: 50%;
+    	top: 50%;
+    	
+    	transform: translate(-50%,-50%);
+    	
+    	text-align: center;
+    	color: white;
+    	line-height: 40px;
+    	width: 40px;
+    	height: 40px;	
+    	border-radius: 100%;
+    	cursor: pointer;
+    	
+    /*	clicked*/
+    /*	display: none;*/
+    }
+    
+    #addTombs p:hover{
+    	background-color: white;
+    	color: #8CA2DE;
+    	border-radius: 100%;
+    }
+    
+    
+    /*list wrap*/
+    .tombs-list-wrap{
+    	margin-top: 60px;
+    }
+    
+    .tombs-list{
+    	background-color: white;
+    	box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+    	margin-bottom: 32px;
+    }
+    
+    .list-padding{
+    	padding: 12px;
+    }
+    
+    .tombs-list img{
+    	width: 40px;
+    	border: 4px solid black;
+    	margin-bottom: 12px;
+    }
+    
+    .list-con:after{
+    	content: "";
+    	display: block;
+    	clear: both;
+    }
+    
+    .list-p{
+    	line-height: 1.8;
+    	font-size: 0.8em;
+    /*	float: left;*/
+    }
+    
+    .list-con:after{
+    	content: "";
+    	display: block;
+    	width: 40%;
+    	height: 1px;
+    	background-color: black;
+    	opacity: 0.5;
+    	margin: 20px 0;
+    }
+    
+    .list-date{
+    	font-size: 0.7em;
+    	opacity: 0.6;
+    }
+    
+    .list-img{
+    	width: 40%;
+    /*	border: 2px solid black;*/
+    	height: 200px;
+    	float: left;
+    	margin-bottom: 20px;
+    	background-image: url(asset/img/sample-01.jpg);
+    	background-size: cover;
+    	background-position: center;
+    	margin-right: 20px;
+    }
+    
+    /*add tombs form*/
+    
+    .addTombs-wrap{
+    	opacity: 0;
+    	width: 100%;
+    	height: 100%;
+    	padding: 20px;
+    }
+    
+    .addTombs-header{
+    	width: 100%;
+    	border-bottom: 1px solid black;
+    }
+    
+    .addTombs-header:after{
+    	clear: both;
+    	content: "";
+    	display: block;
+    }
+    
+    .addTombs-header h3{
+    	float: left;
+    	margin-bottom: 10px;
+    }
+    
+    .addTombs-header input{
+    	display: none;
+    }
+    
+    .addTombs-header label{
+    	cursor: pointer;
+    }
+    
+    .addTombs-header img{
+    	float: right;
+    	width: 40px;
+    	height: 40px;
+    	border: 4px solid black;
+    }
+    
+    .form-container{
+    	height: 80%;
+    	display: flex;
+    	align-items: center;
+    }
+    
+    .addTombs-radioWrap{
+    	display: inline-block;
+    	position: relative;
+    	height: 80%;
+    	width: 24%;
+    	
+    /*	border: 1px solid black;*/
+    	
+    	justify-content: space-around;
+    
+    }
+    
+    
+    .addTombs-radioWrap label{
+    	position: relative;
+    	display: block;
+    	height: 50px;
+    	margin: 20px 0;
+    	cursor: pointer;
+    }
+    
+    .addTombs-radioWrap p{
+    	margin-left: 50px;
+    	height: 40px;
+    	line-height: 40px;
+    	text-transform: capitalize;
+    	
+    	font-size: 0.8rem;
+    	font-weight: lighter;
+    	
+    }
+    
+    .list-cata{
+    	width: 40px;
+    	border: 4px solid black;
+    	box-sizing: border-box;
+    	
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	
+    	margin: 0;
+    	padding: 0;
+    	opacity: 1;
+    }
+    
+    .list-cata-active{
+    	width: 40px;
+    	box-sizing: border-box;
+    	border: 4px solid black;
+    	
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	
+    	margin: 0;
+    	padding: 0;
+    	opacity: 0;
+    }
+    
+    input[type=radio]{
+    	display: none;
+    }
+    
+    input[type = "radio"]:checked + label .list-cata{
+    	opacity: 0;
+    }
+    input[type = "radio"]:checked + label .list-cata-active{
+    	opacity: 1;
+    }
+    input[type = "radio"]:checked + label p{
+    	font-weight: bolder;
+    	opacity: 1;
+    }
+    
+    .addTombs-text{
+    	width:80%;
+    /*	border: 1px solid black;*/
+    	height: 100%;
+    	padding-top: 60px
+    }
+    
+    .addTombs-text textarea{
+    	width: 80%;
+    	height: 50%;
+    	min-height: 40px;
+    	transition: all .3s ease-in-out;
+    	border: none;
+    /*	border: 1px solid black;*/
+    /*	border-bottom: 1px solid black;*/
+    	
+    	text-align: left;
+    	resize: none;
+    	font-size: 0.7em;
+    	padding: 10px;
+    	
+    }
+    
+    
+    
+    #addTombs-image{
+    	display: none;
+    }
+    label[for="addTombs-image"]{
+    	display: block;
+    	width: 100px;
+    	height: 100px;
+    	border: 1px dashed black;
+    	cursor: pointer;
+    	background-color: white;
+    	box-shadow: 1px 1px 3px rgba(0,0,0,0.16);
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    }
+    
+    input[type = "submit"]{
+    	display: none;
+    }
+    label[for="addTombs"]{
+    	position: absolute;
+    	display: inline-block;
+    	right: 20px;
+    	bottom: 20px;
+    	text-align: center;
+    	box-sizing: border-box;
+    }
+    label[for="addTombs"] img{
+    	width: 40px;
+    	cursor: pointer;
+    /*	border: 4px solid black;*/
+    }
+    
+    label[for="addTombs"] img:first-child{
+    	position: absolute;
+    	opacity: 0;
+    	
+    }
+    
+    label[for="addTombs"]:hover img:first-child{
+    	opacity: 1;
+    }
+    
+    
+    /*form toggle checked*/
+    
+    #toggle:checked + div .addTombs-wrap{
+    	opacity: 1;
+    /*	display: block;*/
+    }
+    
+    #toggle:checked + div .toggle{
+    	display: none;
+    }
+    
+    
+    /*more click*/
+    .tombs-profile{
+    	display: block;
+    }
+    
+    .tombs-profile-detail{
+    /*	opacity: 0;*/
+    	display: none;
+    }
+
+}

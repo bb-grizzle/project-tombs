@@ -1,0 +1,52 @@
+<section class="result-main">
+  <header>
+  	<div class="con">
+  		<a href="/" class="logo">
+  			<%= image_tag "svg/logo-min-b-line.svg" %>
+  		</a>
+  		<ul>
+  			<li><a href="/about">about</a></li>
+  			<li><a href="/share">share</a></li>
+  			<li class="active"><a href="/design">life design</a></li>
+  		</ul>
+  	</div>
+  </header>
+  <section class="tombs-profile tran-02">
+  	<div class="con">
+  		<div class="profile-wrap">
+  			<div class="profile-text">
+  				<h3 id="profile-name"><%= @user_name %></h3>
+  				<h3 id="profile-percent" value="<%= @user_life %>"><%= @user_life %>%</h3>
+  				<div id="profile-percent-line"></div>
+  				<p id="profile-message">
+  				   <%= @user_comment %>
+  				</p>
+  				<p> - </p>
+  				<p id="profile-keyword">
+  					화창한 봄 / 비오는 날 / 병원에서 / 배우자와 / 밝은 분위기에서 / 대화를 하다가
+  				</p>
+  				<div id="btn-print" class="tran-02"> <span>Print </span></div>
+  			</div>
+  			<div class="profile-illust">
+  				<ul>
+  				  <li></li>
+  					<li><img src="<%= image_path "svg/q03-02.svg" %>" alt=""></li>
+  					<% @user_life_list.each do |image| %>
+  					  <li>
+  					    <%= image_tag "svg/#{image}.svg" %>
+  					  </li>
+  					<% end %>
+  					<li></li>
+  				</ul>
+  			</div>
+  		</div>
+  	</div>
+  	<img src="<%= image_path "svg/btn-down.svg" %>" alt="btn-down" class="btn-down">
+  </section>
+  <footer>
+		<div class="con foo">
+			<img src="<%= image_path"svg/logo-full-w-line.svg" %>" alt="" class="foo-logo">
+			<p>Copyright(c)2018 by Taewoong, Yoon.<br> All Page content is property of Taewoong</p>
+		</div>
+	</footer>
+</section>
