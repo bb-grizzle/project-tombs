@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'about' => "home#about" 
   get 'design' => "home#design"
   post 'design' => "home#result"
+  get 'result' => "home#result"
   get 'share' => "home#share"
+  post 'share' => "home#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

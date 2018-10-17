@@ -7,7 +7,7 @@
   		<ul>
   			<li><a href="/about">about</a></li>
   			<li><a href="/share">share</a></li>
-  			<li class="active"><a href="/design">life design</a></li>
+  			<li class="active"><a href="/design">my tomb</a></li>
   		</ul>
   	</div>
   </header>
@@ -23,27 +23,146 @@
   				</p>
   				<p> - </p>
   				<p id="profile-keyword">
-  					화창한 봄 / 비오는 날 / 병원에서 / 배우자와 / 밝은 분위기에서 / 대화를 하다가
+  					<%= @user_content %>
   				</p>
   				<div id="btn-print" class="tran-02"> <span>Print </span></div>
   			</div>
   			<div class="profile-illust">
   				<ul>
-  				  <li></li>
+  				  <li>
+							<h2 class="illust-text" id="birth_y"><%= @start_year %></h2>
+							<div class="illust-line" id="illust-line-birth"></div>
+						</li>
   					<li><img src="<%= image_path "svg/q03-02.svg" %>" alt=""></li>
   					<% @user_life_list.each do |image| %>
   					  <li>
   					    <%= image_tag "svg/#{image}.svg" %>
   					  </li>
   					<% end %>
-  					<li></li>
+  					<li>
+							<div class="illust-line" id="illust-line-death"></div>
+							<h2 class="illust-text" id="death_y"><%= @start_year.to_i + @user_wish_age.to_i - 1 %></h2>
+						</li>
   				</ul>
   			</div>
   		</div>
   	</div>
-  	<img src="<%= image_path "svg/btn-down.svg" %>" alt="btn-down" class="btn-down">
+  	<img src="<%= image_path "svg/btn-down.svg" %>" alt="btn-down" class="btn-down" onclick="renderUserLog()">
   </section>
-  <footer>
+  <section class="tombs-profile-detail">
+
+		<div class="profile-bg"></div>
+		<div class="profile-con">
+			<div class="profile-header">
+				<ul>
+					<li><%= @start_year %></li>
+					<li><%= @start_year.to_i + @user_wish_age.to_i - 1 %></li>
+				</ul>
+				<h3 class="profile-name"><%= @user_name %></h3>
+			</div>
+
+			<input type="checkbox" id="toggle">
+			<div id="addTombs" class=" tran-03">
+
+				<label for="toggle" class="toggle">
+					<p class="btn-pluse tran-02">+</p>
+				</label>
+				<div class="addTombs-wrap tran-02">
+					<div class="addTombs-header">
+						<h3>오늘 당신은 <br> 어떤 죽음을 생각했나요. </h3>
+
+						<label for="toggle" onclick="clearUserLog();">
+							<img src="<%= image_path "svg/btn-cancel.svg" %>" alt="" class="form-check" onclick="clearUserLog();">
+						</label>
+
+					</div>
+					<div class="form-container">
+						<div class="addTombs-radioWrap">
+
+							<input type="radio" name="addTombs" id="add-c01">
+							<label for="add-c01">
+								<img src="<%= image_path "svg/c-1-fill.svg" %>" alt="" class="list-cata-active tran-01">
+								<img src="<%= image_path "svg/c-1.svg" %>" alt="" class="list-cata tran-01">
+								<p>thanks</p>
+							</label>
+
+							<input type="radio" name="addTombs" id="add-c02">
+							<label for="add-c02">
+								<img src="<%= image_path "svg/c-2-fill.svg" %>" alt="" class="list-cata-active tran-01">
+								<img src="<%= image_path "svg/c-2.svg" %>" alt="" class="list-cata tran-01">
+								<p>forgive</p>
+							</label>
+
+							<input type="radio" name="addTombs" id="add-c03">
+							<label for="add-c03">
+								<img src="<%= image_path "svg/c-3-fill.svg" %>" alt="" class="list-cata-active tran-01">
+								<img src="<%= image_path "svg/c-3.svg" %>" alt="" class="list-cata tran-01">
+								<p>regret</p>
+							</label>
+
+							<input type="radio" name="addTombs" id="add-c04">
+							<label for="add-c04">
+								<img src="<%= image_path "svg/c-4-fill.svg" %>" alt="" class="list-cata-active tran-01">
+								<img src="<%= image_path "svg/c-4.svg" %>" alt="" class="list-cata tran-01">
+								<p>worry</p>
+							</label>
+						</div>
+
+						<div class="addTombs-text">
+							<textarea name="addTombs-text" placeholder="fill your death." ></textarea>
+
+							<input type="file" name="addTombs-image" id="addTombs-image">
+							<label for="addTombs-image">
+								<p>+</p>
+							</label>
+
+							
+							<label for="addTombs" class="tran-02" onclick="addTombSubmit()">
+								<img src="<%= image_path "svg/btn-check-fill.svg" %>" alt="" class="form-check tran-02">
+								<img src="<%= image_path "svg/btn-check.svg" %>" alt="" class="form-check">
+							</label>
+
+						</div>
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+			<div class="tombs-list-wrap">
+				<ul>
+					<li class="tombs-list">
+						<div class="list-padding">
+							<img src="<%= image_path "svg/c-1.svg" %>" alt="">
+
+							<div class="list-con">
+								<p class="list-p">Ea ea culpa aliqua varias. Hic multos admodum de pariatur labore enim probant elit te quo probant aut eiusmod, ex veniam expetendis mentitum. Tamen nostrud ex offendit.</p>
+							</div>
+
+							<p class="list-date">2018.10.12</p>
+						</div>
+					</li>
+
+					<li class="tombs-list">
+						<div class="list-padding">
+							<img src="<%= image_path "svg/c-3.svg" %>" alt="">
+
+							<div class="list-con">
+							  <%= image_tag "img/sample-01.jpg", class: "list-img" %>
+								<!--<div class="list-img"></div>-->
+								<p class="list-p">Ea ea culpa aliqua varias. Hic multos admodum de pariatur labore enim probant elit te quo probant aut eiusmod, ex veniam expetendis mentitum. Tamen nostrud ex offendit.</p>
+							</div>
+
+							<p class="list-date">2018.10.12</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+  </section>
+  <footer style="display: none;">
 		<div class="con foo">
 			<img src="<%= image_path"svg/logo-full-w-line.svg" %>" alt="" class="foo-logo">
 			<p>Copyright(c)2018 by Taewoong, Yoon.<br> All Page content is property of Taewoong</p>

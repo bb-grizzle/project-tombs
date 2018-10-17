@@ -63,3 +63,22 @@ const actionNextButton = (className) => {
     
   }
 }
+
+const submitAction = () => {
+  let contentValue = "";
+  contentValue += `${getContentValue("q02")}에 `
+  contentValue += `${getContentValue("q03")} 날 /`
+  contentValue += `${getContentValue("q04")}에서 /`
+  contentValue += `${getContentValue("q05")} /`
+  contentValue += `${getContentValue("q06")} /`
+  contentValue += `${getContentValue("q07")}`
+  
+  $('#user-content').val(contentValue);
+  $(".user-form-layout").submit();
+}
+
+const getContentValue = (inputName) => {
+  const currentForName = $(`input[name="${inputName}"]:checked`).val();
+  const currentContent = $(`label[for="${currentForName}"] h5`).text();
+  return `${currentContent}`
+}

@@ -1,5 +1,5 @@
 <section class="design-layout">
-  <%= form_tag("/design", method: "post") do %>
+  <%= form_tag("/design", method: "post", class: "user-form-layout") do %>
     <fieldset class="user-info sec01" name="q01">
 			<h4>당신은<br>어떤 사람 인가요?</h4>
 			<div class="question-row q01-01">
@@ -233,7 +233,8 @@
 			</div>
     </fieldset>
       <fieldset name="q-submit" class="q-submit">
-			<input type="submit" id="q-submit" name="q-submit" onclick="submit">
+      <input type="hidden" name="content" id="user-content"/>
+			<div type="submit" id="q-submit" name="q-submit" onclick="submitAction()"/>
 			<label for="q-submit" id="btn-wrap">
 				<img src="<%= image_path "svg/btn-enroll.svg" %>" alt="enrollment">
 			</label>
