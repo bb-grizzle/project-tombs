@@ -27,9 +27,26 @@ class HomeController < ApplicationController
   end
   
   def share
+    @tombs = Tomb.all.reverse_order
   end
   
   def new
+    tomb = Tomb.new
+    tomb.name = params[:name]
+    tomb.content = params[:content]
+    
+    case params[:emotion]
+      when "thanks" then tomb.emotion = "svg/c-1.svg"
+      when "forgive" then tomb.emotion = "svg/c-2.svg"
+      when "regret" then tomb.emotion = "svg/c-3.svg"
+      when "worry" then tomb.emotion = "svg/c-4.svg"
+    end
+    
+    if "#{params[:image]}" != "" 
+      tomb.image_url = params[:image]
+    end
+    
+    tomb.save
     
     respond_to do |format|
         format.html { redirect_to :back }

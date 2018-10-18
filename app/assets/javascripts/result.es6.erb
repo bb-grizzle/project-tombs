@@ -63,10 +63,11 @@ const getTombFormData = () => {
     const formData = new FormData();
     formData.set("emotion", _emotionData);
     formData.set("content", _contentData);
+    formData.set("name", $('#profile-name').text());
     
     if ($.trim($("#addTombs-image").val())) {
         const _imageData = $("#addTombs-image")[0].files[0];
-        formData.append("image", _imageData, "<%= [*('a'..'z'),*('0'..'9')].shuffle[0,8].join %>");
+        formData.append("image", _imageData, "<%= [*('a'..'z'),*('0'..'9')].shuffle[0,8].join %>.jpg");
     }
     
     return formData;

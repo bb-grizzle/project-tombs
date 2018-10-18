@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'sprockets'
 gem 'sprockets-es6'
+gem 'carrierwave', '~> 1.0'
+gem 'rails_db'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
