@@ -8,6 +8,12 @@ const renderUserLog = () => {
     $('footer').delay(500).fadeIn();
 }
 
+const renderUserInfo = () => {
+    $('.tombs-profile-detail').fadeOut();
+    $('footer').fadeOut();
+    $('.tombs-profile').delay(500).fadeIn();
+}
+
 const clearUserLog = () => {
     $("input[name='addTombs']").prop("checked", false);
     $("textarea[name='addTombs-text']").val("");
@@ -124,6 +130,8 @@ const renderTombData = (formData) => {
     if (__image) {
         $(`.${randomNum}`).show();
     }
+}
 
-        
+const profilePrint = () => {
+	window.print();
 }

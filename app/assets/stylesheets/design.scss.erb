@@ -6,14 +6,34 @@
     height: 100vh;
     
     .btn-next {
+    	width: 100%;
         color: #e0e0e0;
         font-size: 0.8em;
         display: inline-block;
         padding: 10px;
         font-weight: bold;
-        margin-left: 500px;
+        text-align: center;
         margin-top: 30px;
     }
+    
+    .icon-border{
+		content: "";
+		display: block;
+		width: 80px;
+		height: 80px;
+		box-sizing: border-box;
+		border: 4.0px solid black;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		opacity: 0;
+		transition: all .3s ease-in-out;
+	}
+	
+	input[type = "radio"]:checked + label .icon-border{
+		opacity: 1;
+	}
     
     .btn-next-checked {
         color: #000;

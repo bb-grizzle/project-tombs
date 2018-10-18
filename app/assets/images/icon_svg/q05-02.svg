@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+</style>
+<symbol  id="icon_outline_2" viewBox="-42 -42 84 84">
+	<path class="st0" d="M-42-42v84h84v-84H-42z M38,38h-76v-76h76V38z"/>
+</symbol>
+<title>q04-2-line</title>
+<use xlink:href="#icon_outline_2"  width="84" height="84" id="icon_outline_2-3" x="-42" y="-42" transform="matrix(1 0 0 1 42 42)" style="overflow:visible;"/>
+<path d="M43,64c-12.7,0-23-10.3-23-23c0-6.1,2.4-12,6.8-16.3c1.8-1.9,4-3.4,6.4-4.5l5.1-2.4l-2.4,5.1c-4.6,9.5-0.6,20.8,8.9,25.4
+	c5.2,2.5,11.3,2.5,16.5,0l5.1-2.4l-2.4,5.1C60,58.9,51.9,64,43,64z M30.3,26.8c-0.3,0.2-0.5,0.5-0.7,0.7c-7.4,7.4-7.4,19.4,0,26.9
+	c0,0,0,0,0,0l0,0c7.4,7.4,19.4,7.4,26.9,0c0,0,0,0,0,0c0.2-0.2,0.5-0.5,0.7-0.7c-12.5,2.4-24.5-5.8-26.9-18.3
+	C29.8,32.5,29.8,29.6,30.3,26.8z"/>
+<rect x="30" y="10" width="4" height="4"/>
+<rect x="50" y="10" width="4" height="4"/>
+<rect x="50.1" y="30" width="4" height="4"/>
+<rect x="70.9" y="10" width="4" height="4"/>
+<rect x="50" y="70" width="4" height="4"/>
+<rect x="70.9" y="70" width="4" height="4"/>
+<rect x="71.1" y="30" width="4" height="4"/>
+<rect x="71.1" y="50.2" width="4" height="4"/>
+<rect x="10" y="10" width="4" height="4"/>
+<rect x="30" y="70" width="4" height="4"/>
+<rect x="10" y="70" width="4" height="4"/>
+<rect x="10" y="30" width="4" height="4"/>
+<rect x="10" y="50.2" width="4" height="4"/>
+</svg>

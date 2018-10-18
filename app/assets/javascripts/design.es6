@@ -66,12 +66,12 @@ const actionNextButton = (className) => {
 
 const submitAction = () => {
   let contentValue = "";
-  contentValue += `${getContentValue("q02")}에 `
-  contentValue += `${getContentValue("q03")} 날 /`
-  contentValue += `${getContentValue("q04")}에서 /`
-  contentValue += `${getContentValue("q05")} /`
-  contentValue += `${getContentValue("q06")} /`
-  contentValue += `${getContentValue("q07")}`
+  contentValue += `${getContentValue("q02")}, `
+  contentValue += `${getContentValue("q03")} 날에 `
+  contentValue += `${getContentValue("q04")}에서 `
+  contentValue += getContentValue("q07") == "혼자" ? `${getContentValue("q07")} ` : `${getContentValue("q07")}과(와) `
+  contentValue += `${getContentValue("q06")} 분위기 속에서 `
+  contentValue += `${getContentValue("q05")}를 하다가 죽고 싶어요.`
   
   $('#user-content').val(contentValue);
   $(".user-form-layout").submit();

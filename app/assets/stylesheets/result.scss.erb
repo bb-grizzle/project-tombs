@@ -235,7 +235,7 @@
     	height: 6px;
     	background-color: #8CA2DE;
     	position: absolute;
-    	top: 0px;
+    	top: 114px;
     	left: 0px;
     	
     	transition: all .5s ease-in-out;
@@ -266,7 +266,7 @@
     
     #profile-keyword{
     	font-size: .6em;
-    	width: 20vw;
+    	width: 25vw;
     	line-height: 2.5;
     }
     
@@ -694,4 +694,49 @@
         height: 100%;
         object-fit: cover;
     }
+    
+    @media print {
+    header{
+    	display: none;
+    }
+    footer{
+    	display: none;
+    }
+    
+    body{
+    	background-image: none;
+    }
+    .tombs-profile{
+    	margin-top: -90px;
+    	padding-left: 40px;
+    	display: flex;	
+    }
+    
+    .con{
+    	width: 100%;
+    }
+    .btn-down{
+    	display: none;
+    }
+    #btn-print{
+    	display: none;
+    }
+    
+    p{
+    	font-size: 0.65em;
+    }
+    
+    #gap{
+    	margin: 20px 0;
+    }
+    
+    #profile-keyword{
+    	font-size: 0.6em
+    }
+    	
+	.tombs-profile-detail{
+		display: none;
+	}
 }
+}
+

@@ -6,15 +6,15 @@ function q08_focusOut() {
 	var q08_textWrap = document.querySelectorAll('.text-wrap')[0];
 	var iconBg = q08_textWrap.querySelectorAll(".q-icon-bg")[0];
 	var icon = q08_textWrap.querySelectorAll(".q-icon")[0];
-
+	var iconBorder = q08_textWrap.querySelectorAll(".icon-border")[0];
 
 	if (q08_val.length > 0) {
 		console.log("full");
 		iconBg.style.boxShadow = "3px 3px 8px rgba(0,0,0,0.4)";
 		icon.style.opacity = "1";
+		iconBorder.style.opacity = "1";
 		var styleElem = document.head.appendChild(document.createElement("style"));
-		styleElem.innerHTML = "#q08_icon_bg:after {opacity: 1;}";
-
+	
 	} else {
 		console.log("empty");
 		iconBg.style.boxShadow = "1px 1px 3px rgba(0,0,0,0.16)";
@@ -22,7 +22,7 @@ function q08_focusOut() {
 		icon_after_opacity = "0";
 		var styleElem = document.head.appendChild(document.createElement("style"));
 		styleElem.innerHTML = "#q08_icon_bg:after {opacity: 0;}";
-
+		iconBorder.style.opacity = "0";
 	}
 }
 
