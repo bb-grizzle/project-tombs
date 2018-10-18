@@ -1,0 +1,128 @@
+let __image = "";
+let __emotion;
+let __content;
+
+const renderUserLog = () => {
+    $('.tombs-profile').fadeOut();
+    $('.tombs-profile-detail').delay(500).fadeIn();
+    $('footer').delay(500).fadeIn();
+}
+
+const clearUserLog = () => {
+    $("input[name='addTombs']").prop("checked", false);
+    $("textarea[name='addTombs-text']").val("");
+    $("input[name='addTombs-image']").val("");
+    $("#add-image").hide();
+    $("#add-image-none").show();
+}
+
+const addTombSubmit = () => {
+    if (hasTombNull()) {
+        const tombDatas = getTombFormData();
+        requestTombData(tombDatas);
+    } else {
+        alert("이미지를 제외한 모든 내용을 입력해 주세요.");
+    }
+}
+
+const addImageListener = () => {
+    $("#addTombs-image").on('change', function(){
+        const imageUrl = this.files[0];
+        if (imageUrl) {
+            const fileReader = new FileReader();
+            fileReader.onload = function(selectImage) {
+                $("#add-image").attr("src", selectImage.target.result);
+                __image = selectImage.target.result;
+            }
+            fileReader.readAsDataURL(imageUrl);
+            $("#add-image-none").hide();
+            $("#add-image").show();
+        } else {
+            $("#add-image").hide();
+            $("#add-image-none").show();
+        }
+    });
+}
+
+const hasTombNull = () => {
+    let nullData = true;
+    
+    const _emotion = $('input[name="addTombs"]:checked').val();
+    const _content = $('textarea[name="addTombs-text"]').val();
+    if (!(_emotion && _content)) {
+        nullData = false;
+    }
+    return nullData;
+}
+
+const getTombFormData = () => {
+    const _emotionData = $.trim($('input[name="addTombs"]:checked').val());
+    __emotion = _emotionData;
+    const _contentData = $.trim($('textarea[name="addTombs-text"]').val());
+    __content = _contentData;
+    const formData = new FormData();
+    formData.set("emotion", _emotionData);
+    formData.set("content", _contentData);
+    
+    if ($.trim($("#addTombs-image").val())) {
+        const _imageData = $("#addTombs-image")[0].files[0];
+        formData.append("image", _imageData, "<%= [*('a'..'z'),*('0'..'9')].shuffle[0,8].join %>");
+    }
+    
+    return formData;
+}
+
+const requestTombData = (formData) => {
+    axios({
+        method: 'post',
+        url: 'share',
+        data: formData,
+        config: { headers: {'Content-Type': 'multipart/form-data' }}
+    }).then((response) => {
+        $('label[for="toggle"] img').trigger("click");
+        renderTombData(formData);
+    }).catch((error) => {
+        console.log(`error: ${error.response.data}`);
+    })
+}
+
+const renderTombData = (formData) => {
+    let _imageUrl;
+    switch (formData.get("emotion")) {
+        case "thanks":
+            _imageUrl = '<%= image_path "svg/c-1.svg" %>'
+            break;
+        case "forgive":
+            _imageUrl = '<%= image_path "svg/c-2.svg" %>'
+            break;
+        case "regret":
+            _imageUrl = '<%= image_path "svg/c-3.svg" %>'
+            break;
+        case "worry":
+            _imageUrl = '<%= image_path "svg/c-4.svg" %>'
+            break;
+        default:
+            _imageUrl = '<%= image_path "svg/c-4.svg" %>'
+    }
+        
+    const randomNum = "<%= [*('a'..'z'),*('0'..'9')].shuffle[0,8].join %>";
+    
+    $(".tombs-list-wrap ul").prepend(
+        `
+        <li class="tombs-list">
+			<div class="list-padding">
+				<img src=${_imageUrl} alt="">
+                <div class="list-con">
+                    <img src="${__image}" class="list-img ${randomNum}" style="display:none;"/>
+				    <p class="list-p">${__content}</p>
+				</div>
+				<p class="list-date"><%= Time.now.strftime("%Y.%m.%d") %></p>
+			</div>
+		</li>
+        `);
+    if (__image) {
+        $(`.${randomNum}`).show();
+    }
+
+        
+}

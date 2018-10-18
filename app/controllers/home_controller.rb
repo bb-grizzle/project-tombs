@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def about
   end
   
@@ -28,7 +30,11 @@ class HomeController < ApplicationController
   end
   
   def new
-    render :nothing => true
+    
+    respond_to do |format|
+        format.html { redirect_to :back }
+        format.json { render json: "dd" }
+    end
   end
   
   def changeNullValue (content, changeContent) 

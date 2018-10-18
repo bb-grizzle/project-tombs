@@ -79,28 +79,28 @@
 					<div class="form-container">
 						<div class="addTombs-radioWrap">
 
-							<input type="radio" name="addTombs" id="add-c01">
+							<input type="radio" name="addTombs" value="thanks" id="add-c01">
 							<label for="add-c01">
 								<img src="<%= image_path "svg/c-1-fill.svg" %>" alt="" class="list-cata-active tran-01">
 								<img src="<%= image_path "svg/c-1.svg" %>" alt="" class="list-cata tran-01">
 								<p>thanks</p>
 							</label>
 
-							<input type="radio" name="addTombs" id="add-c02">
+							<input type="radio" name="addTombs" value="forgive" id="add-c02">
 							<label for="add-c02">
 								<img src="<%= image_path "svg/c-2-fill.svg" %>" alt="" class="list-cata-active tran-01">
 								<img src="<%= image_path "svg/c-2.svg" %>" alt="" class="list-cata tran-01">
 								<p>forgive</p>
 							</label>
 
-							<input type="radio" name="addTombs" id="add-c03">
+							<input type="radio" name="addTombs" value="regret" id="add-c03">
 							<label for="add-c03">
 								<img src="<%= image_path "svg/c-3-fill.svg" %>" alt="" class="list-cata-active tran-01">
 								<img src="<%= image_path "svg/c-3.svg" %>" alt="" class="list-cata tran-01">
 								<p>regret</p>
 							</label>
 
-							<input type="radio" name="addTombs" id="add-c04">
+							<input type="radio" name="addTombs" value="worry" id="add-c04">
 							<label for="add-c04">
 								<img src="<%= image_path "svg/c-4-fill.svg" %>" alt="" class="list-cata-active tran-01">
 								<img src="<%= image_path "svg/c-4.svg" %>" alt="" class="list-cata tran-01">
@@ -111,9 +111,10 @@
 						<div class="addTombs-text">
 							<textarea name="addTombs-text" placeholder="fill your death." ></textarea>
 
-							<input type="file" name="addTombs-image" id="addTombs-image">
+							<input type="file" name="addTombs-image" id="addTombs-image" accept="image/*" />
 							<label for="addTombs-image">
-								<p>+</p>
+							  <img id="add-image" src="http://newsimg.hankookilbo.com/2016/03/11/201603111147966593_1.jpg" alt="your image" style="display:none"/>
+								<p id="add-image-none">+</p>
 							</label>
 
 							
@@ -169,3 +170,7 @@
 		</div>
 	</footer>
 </section>
+
+<script>
+  addImageListener();
+</script>
