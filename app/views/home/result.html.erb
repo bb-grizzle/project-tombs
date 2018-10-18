@@ -13,12 +13,12 @@
   </header>
   <section class="tombs-profile tran-02">
   	<div class="con">
-  		<div class="profile-wrap">
-  			<div class="profile-text">
-  				<h3 id="profile-name"><%= @user_name %></h3>
-  				<h3 id="profile-percent" value="<%= @user_life %>"><%= @user_life %>%</h3>
+  		<div class="profile-wrap" style="display: none">
+  			<div class="profile-text" >
+  				<h3 id="profile-name" class="text-<%= @user_life_list[0] %>"><%= @user_name %></h3>
+  				<h3 id="profile-percent" class="text-<%= @user_life_list[0] %>" value="<%= @user_life %>"><%= @user_life %>%</h3>
   				<div id="profile-percent-line"></div>
-  				<div id="profile-percent-line-active" style="width: <%= @user_life %>%;"></div>
+  				<div id="profile-percent-line-active" class="background-<%= @user_life_list[0] %>" style="width: <%= @user_life %>%;"></div>
   				<p id="profile-message">
   				   <%= @user_comment %>
   				</p>
@@ -26,50 +26,41 @@
   				<p id="profile-keyword">
   					<%= @user_content %>
   				</p>
-  				<div id="btn-print" class="tran-02" onclick="profilePrint()"> <span>Print </span></div>
+  				<div id="btn-print" class="tran-02 background-<%= @user_life_list[0] %>" onclick="profilePrint()"> <span>Print </span></div>
   			</div>
-  			<div class="profile-illust">
+  			<div class="profile-illust profile-illust-<%= @user_life_list[0] %>" >
   				<ul>
   				  <li>
-							<h2 class="illust-text" id="birth_y"><%= @start_year %></h2>
-							<div class="illust-line" id="illust-line-birth"></div>
+							<h2 class="illust-text text-<%= @user_life_list[0] %>" id="birth_y"><%= @start_year %></h2>
+							<div class="illust-line background-<%= @user_life_list[0] %>" id="illust-line-birth"></div>
 						</li>
   					<% @user_life_list.each do |image| %>
   					  <li>
-  					    <%= image_tag "svg/#{image}.svg" %>
+  					    <%= image_tag "svg/#{image}.svg", class: "svg fill-#{@user_life_list[0]}" %>
   					  </li>
   					<% end %>
-  					<li><img src="<%= image_path "svg/q08.svg" %>" alt=""></li>
+  					<li><img src="<%= image_path "svg/q08.svg" %>" class="fill-<%= @user_life_list[0] %>" alt=""></li>
   					<li>
-							<div class="illust-line" id="illust-line-death"></div>
-							<h2 class="illust-text" id="death_y"><%= @start_year.to_i + @user_wish_age.to_i - 1 %></h2>
+							<div class="illust-line background-<%= @user_life_list[0] %>" id="illust-line-death"></div>
+							<h2 class="illust-text text-<%= @user_life_list[0] %>" id="death_y"><%= @start_year.to_i + @user_wish_age.to_i - 1 %></h2>
 						</li>
   				</ul>
   			</div>
   		</div>
   	</div>
-  	<img src="<%= image_path "svg/btn-down.svg" %>" alt="btn-down" class="btn-down" onclick="renderUserLog()">
+  	<img src="<%= image_path "svg/btn-down.svg" %>" alt="btn-down" class="btn-down" onclick="renderUserLog()" >
   </section>
   <section class="tombs-profile-detail">
 
-		<div class="profile-bg"></div>
+		<div class="profile-bg background-<%= @user_life_list[0] %>"></div>
 		<div class="profile-con">
-			<div class="profile-header" onclick="renderUserInfo()" >
-			  <div class="profile-layout">
-  				<ul>
-  					<li><%= @start_year %></li>
-  					<li><%= @start_year.to_i + @user_wish_age.to_i - 1 %></li>
-  				</ul>
-  				<h3 class="profile-name"><%= @user_name %></h3>
-				</div>
-				<div class="profile-layout-hover" style="display:none">
-				  <ul>
-  					<li style="border-bottom: 0px; height: 100%; display:flex; justify-content: center; align-items: center;">
-  					   ▲
-  					</li>
-  				</ul>
-				  <h3 class="profile-name">돌아가기</h3>
-				</div>
+			<div class="profile-header border-<%= @user_life_list[0] %> background-h-<%= @user_life_list[0] %>" onclick="renderUserInfo()" >
+  			<%= image_tag "svg/btn-up-w.svg" %>
+  			<ul class="border-r-<%= @user_life_list[0] %>">
+  				<li class="text-<%= @user_life_list[0] %> border-b-<%= @user_life_list[0] %>"><%= @start_year %></li>
+  				<li class="text-<%= @user_life_list[0] %>"><%= @start_year.to_i + @user_wish_age.to_i - 1 %></li>
+  			</ul>
+  			<h3 class="profile-name text-<%= @user_life_list[0] %>"><%= @user_name %></h3>
 			</div>
 
 			<input type="checkbox" id="toggle">
@@ -183,12 +174,6 @@
 
 <script>
   addImageListener();
-  $( ".profile-header" ).hover( 
-    function() {
-      $('.profile-layout').hide();
-      $('.profile-layout-hover').show();
-    }, function() {
-      $('.profile-layout-hover').hide();
-      $('.profile-layout').show();
-  });
+  changeSVGColor("fill-<%= @user_life_list[0] %>");
+  renderView();
 </script>

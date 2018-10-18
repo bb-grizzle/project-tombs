@@ -15,15 +15,16 @@ class HomeController < ApplicationController
     @user_wish_age = changeNullValue(params["q01-03"], 88)
     @user_life = ((@user_age.to_f / @user_wish_age.to_f) * 100).to_i
     @user_life_list = [
-        changeNullValue(params["q02"], "q03-04" ),
+        changeNullValue(params["q02"], "q02-01" ),
         changeNullValue(params["q03"], "q03-04" ),
-        changeNullValue(params["q04"], "q03-04" ),
-        changeNullValue(params["q05"], "q03-04" ),
-        changeNullValue(params["q06"], "q03-04" ),
-        changeNullValue(params["q07"], "q03-04" )
+        changeNullValue(params["q04"], "q04-01" ),
+        changeNullValue(params["q05"], "q05-04" ),
+        changeNullValue(params["q06"], "q06-03" ),
+        changeNullValue(params["q07"], "q07-02" )
       ]
     @user_comment = changeNullValue(params["q08"], "더할나위 없었다.")
     @user_content = changeNullValue(params["content"], "잘먹고 잘 살다가 간다.")
+    @base_color = setMainColor(@user_life_list[0])
   end
   
   def share
@@ -58,5 +59,15 @@ class HomeController < ApplicationController
     current_content = content
     current_content = content.nil? ? changeContent : content
     return current_content
+  end
+  
+  def setMainColor (season) 
+    case season
+      when "q02-01" then base_color = "#FF8B97"
+      when "q02-02" then base_color = "#6EB134"
+      when "q02-03" then base_color = "#F4A200"
+      when "q02-04" then base_color = "#8CA2DE"
+    end
+    return base_color
   end
 end

@@ -1,6 +1,10 @@
 const userForms = [];
 let nextButtonManager = false;
 
+const alert = (value) => {
+  swal(value);
+}
+
 const input_checker = (obj) => {
   const dataNo = obj.dataset.formNo;
   const isNull = hasValue(obj.value);
@@ -65,16 +69,21 @@ const actionNextButton = (className) => {
 }
 
 const submitAction = () => {
-  let contentValue = "";
-  contentValue += `${getContentValue("q02")}, `
-  contentValue += `${getContentValue("q03")} 날에 `
-  contentValue += `${getContentValue("q04")}에서 `
-  contentValue += getContentValue("q07") == "혼자" ? `${getContentValue("q07")} ` : `${getContentValue("q07")}과(와) `
-  contentValue += `${getContentValue("q06")} 분위기 속에서 `
-  contentValue += `${getContentValue("q05")}를 하다가 죽고 싶어요.`
-  
-  $('#user-content').val(contentValue);
-  $(".user-form-layout").submit();
+  const currentValue = $('textarea[name="q08"]').val();
+  if ($.trim(currentValue)) {
+    let contentValue = "";
+    contentValue += `${getContentValue("q02")}, `
+    contentValue += `${getContentValue("q03")} 날에 `
+    contentValue += `${getContentValue("q04")}에서 `
+    contentValue += getContentValue("q07") == "혼자" ? `${getContentValue("q07")} ` : `${getContentValue("q07")}과(와) `
+    contentValue += `${getContentValue("q06")} 분위기 속에서 `
+    contentValue += `${getContentValue("q05")}를 하다가 죽고 싶어요.`
+    
+    $('#user-content').val(contentValue);
+    $(".user-form-layout").submit();
+  } else {
+    alert("마지막 한마디를 남겨주세요");
+  }
 }
 
 const getContentValue = (inputName) => {

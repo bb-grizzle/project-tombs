@@ -18,7 +18,7 @@
     /*header------------------*/
     header{
     	height: 80px;
-    	position: fixed;
+    	position: relative;
     	width: 100%;
     	top: 0;
     	z-index: 1;
@@ -103,7 +103,7 @@
     
     .tombs-profile{
     	height: calc(100vh - 80px);
-    	height: 100vh;
+    // 	height: 100vh;
     	display: flex;
     	padding-top: 8%;
     	position: relative;
@@ -205,15 +205,62 @@
     	content: "";
     	display: block;
     	position: absolute;
-    	
     	width: 100%;
     	height: 100%;
     	border: 8px solid black;
     	box-sizing: border-box;
-    	
     	left: 0;
     	top: 0;
     }
+ 
+    .profile-illust-q02-01 li:after{
+    	content: "";
+    	display: block;
+    	position: absolute;
+    	width: 100%;
+    	height: 100%;
+    	border: 8px solid #FF8B97 !important;
+    	box-sizing: border-box;
+    	left: 0;
+    	top: 0;
+    }
+    
+    .profile-illust-q02-02 li:after{
+    	content: "";
+    	display: block;
+    	position: absolute;
+    	width: 100%;
+    	height: 100%;
+    	border: 8px solid #6EB134 !important;
+    	box-sizing: border-box;
+    	left: 0;
+    	top: 0;
+    }
+    
+    .profile-illust-q02-03 li:after{
+    	content: "";
+    	display: block;
+    	position: absolute;
+    	width: 100%;
+    	height: 100%;
+    	border: 8px solid #F4A200 !important;
+    	box-sizing: border-box;
+    	left: 0;
+    	top: 0;
+    }
+    
+    .profile-illust-q02-04 li:after{
+    	content: "";
+    	display: block;
+    	position: absolute;
+    	width: 100%;
+    	height: 100%;
+    	border: 8px solid #8CA2DE !important;
+    	box-sizing: border-box;
+    	left: 0;
+    	top: 0;
+    }
+    
     
     #profile-percent{
     	margin-bottom: 4px;
@@ -266,7 +313,7 @@
     
     #profile-keyword{
     	font-size: .6em;
-    	width: 25vw;
+    	width: 70%;
     	line-height: 2.5;
     }
     
@@ -317,24 +364,48 @@
     
     .profile-bg{
     	width: 100%;
-    	height: 500px;
+    // 	height: 500px;
     	background-color: #8CA2DE;
-    	position: fixed;
-    	bottom: 0;
-    	height: 75%;
+    	position: absolute;
+    	top: 0;
+    	margin-top: -40px;
+    	height: calc(100% + 140px);
     }
     
-    .profile-header{
+    .profile-header {
     	width: 480px;
     	height: 80px;
     	margin: 60px auto;
     	position: relative;
     	background-color: white;
     	border: 4px solid #8CA2DE;
-    	box-sizing: content-box
+    	box-sizing: content-box;
+    	transition: all .3s ease-in-out;
     }
     
-    .profile-header ul{
+    .profile-header img {
+    	width: 60px;
+    	position: absolute;
+    	left: 50%;
+    	top: 50%;
+    	transform: translate(-50%, -50%);
+    	opacity: 0;
+    	transition: all .2s ease-in-out;
+    }
+    
+    .profile-header:hover {
+    	background-color: white;
+    	cursor: pointer;
+    	background-color: #8CA2DE;
+    }
+    
+    .profile-header:hover img {
+    	opacity: 1;
+    }
+    
+    
+    
+    .profile-header ul {
     	height: 80px;
     	float: left;
     	width: 80px;
@@ -342,7 +413,7 @@
     	box-sizing: border-box;
     }
     
-    .profile-header li{
+    .profile-header li {
     	height: 40px;
     	text-align: center;
     	line-height: 35px;
@@ -350,7 +421,7 @@
     	color: #8CA2DE
     }
     
-    .profile-header li:first-child{
+    .profile-header li:first-child {
     	border-bottom: 4px solid #8CA2DE;
     }
     
